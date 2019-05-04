@@ -6,6 +6,7 @@
  */
 package com.in28minutes.junit.helper;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,6 +24,11 @@ public class QuickBeforeAfterTest {
 	@Test
 	public void test2() {
 		System.out.println("test2 executed");
+	}
+
+	@After
+	public void teardown() {
+		System.out.println("After Test");
 	}
 
 }
