@@ -23,4 +23,11 @@ public class ArraysCompareTest {
 		Arrays.sort(numbers);
 		assertArrayEquals(expected, numbers);
 	}
+
+	@Test(expected = NullPointerException.class) // JUnit5: Check assertThrows
+	public void testArraySort_NullArray() {
+		int[] numbers = null;
+		Arrays.sort(numbers);
+	}
+
 }
