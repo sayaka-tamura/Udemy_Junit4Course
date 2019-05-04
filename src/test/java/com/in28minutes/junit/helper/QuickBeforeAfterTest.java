@@ -7,11 +7,18 @@
 package com.in28minutes.junit.helper;
 
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class QuickBeforeAfterTest {
-	@Before
+	@BeforeClass // JUnit5: @BeforeAll, don't have to be static
+	public static void beforeClass() {
+		System.out.println("Before Class");
+	}
+
+	@Before // JUnit5: @BeforeEach
 	public void setup() {
 		System.out.println("Before Test");
 	}
@@ -26,9 +33,14 @@ public class QuickBeforeAfterTest {
 		System.out.println("test2 executed");
 	}
 
-	@After
+	@After // JUnit5: @AfterEach
 	public void teardown() {
 		System.out.println("After Test");
+	}
+
+	@AfterClass // JUnit5: @AfterAll, don't have to be static
+	public static void AfterClass() {
+		System.out.println("After Class");
 	}
 
 }
